@@ -1,0 +1,114 @@
+:root {
+    --modal-duration: 1s;
+    --modal-color: #428bca;
+  }
+  
+  .button {
+    background: #428bca;
+    padding: 1em 2em;
+    color: #fff;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background: #3876ac;
+  }
+  
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .modal-content {
+    margin: 10% auto;
+    width: 40%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+    animation-name: modalopen;
+    animation-duration: var(--modal-duration);
+  }
+  
+  
+  .modal-body {
+    padding: 10px 20px;
+    background: #CFDDDD;
+  }
+
+  .modal-body h1{
+    text-align: center;
+    margin-top: -12%;
+    margin-left: 5%;
+  }
+
+  .modal-body h3{
+    margin-top: -5%;
+  }
+
+  .modal-body img{
+    margin-left: 9%;
+  }
+
+  .modal-body .input{
+    margin-top: -3%;
+  }
+
+  .modal-body .input2{
+    margin-top: -3%;
+  }
+
+  .modal-content .clear{
+    width: 70px;
+    height: 30px;
+    background: #B49E71;
+    border: #B49E71;
+    color: white;
+  }
+
+  .modal-content .cancel{
+    width: 70px;
+    height: 30px;
+    margin-left: 51.6%;
+    background: #737373;
+    border:  #737373;
+    color: white;
+  }
+
+  .modal-content .add{
+    width: 120px;
+    height: 30px;
+    background: #FF5757;
+    border: #FF5757;
+    color: white;
+  }
+  
+  .close {
+    color: black;
+    float: right;
+    font-size: 30px;
+  
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  @keyframes modalopen {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  

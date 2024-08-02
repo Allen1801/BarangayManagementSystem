@@ -1,0 +1,67 @@
+<?php
+
+$link = mysqli_connect("localhost", "root", "", "barangaydb");
+
+if($link === false){
+    die("ERROR: Could not connect. ". mysqli_connect_error());
+}
+
+    $id = $_GET['id'];
+    $resident = $_GET['resident'];
+    $businessname = $_GET['businessname'];
+    $address = $_GET['address'];
+    $type = $_GET['type'];
+    $orno = $_GET['orno'];
+    $amount = $_GET['amount'];
+
+?>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="../css/zone_permit.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link href="https://fonts.googleapis.com/css?family=Lora:400,700|Montserrat:300" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Chivo:300,700|Playfair+Display:700i" rel="stylesheet"> 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+</head>
+
+<body style = "background-image: url(../images/main.png); background-repeat: no-repeat; background-size: cover;" >
+
+    <form class= "form" action="edit_perfunction.php" method="POST">
+          <img src="../images/logo.png" style="height: 100px; width: 100px; margin-top: 20px;">
+          <h1 style="margin-left: 190px; margin-top: -69px; font-size: 42px; font-weight: bolder;">MANAGE PERMIT</h1>
+         <h3 style="margin-top:10px; margin-left: 6px;">__________________________________________________</h3>
+
+          <input type="hidden"  value="<?php echo $id; ?>" name="hidden_id" id="hidden_id"/>
+          <p style="margin-bottom: 0px; font-weight: bolder; margin-left: 110px;">OWNER : </p>
+          <input type="text" name="name" class="name" value="<?php echo $resident; ?>" placeholder="Last Name, First Name, Middle Name" style="width: 450px; margin-bottom: 10px; margin-left: 110px;" >
+
+          <p style="margin-bottom: 0px; font-weight: bolder; margin-left: 110px;">BUSINESS NAME : </p>
+          <input type="text" name="bname" class="username" value="<?php echo $businessname; ?>" placeholder="Business Name" style="width: 450px; margin-bottom: 10px; margin-left: 110px;">
+
+          <p style="margin-bottom: 0px; font-weight: bolder; margin-left: 110px;">BUSINESS ADDRESS : </p>
+          <input type="text" name="address" class="number" value="<?php echo $address; ?>" placeholder="Business Address" style="width: 450px; margin-bottom: 10px; margin-left: 110px;">
+
+          <p style="margin-bottom: 0px; font-weight: bolder; margin-left: 110px;">TYPE OF BUSINESS : </p>
+          <input type="text" name="type" class="username" value="<?php echo $type; ?>" placeholder="Type of Business" style="width: 450px; margin-bottom: 10px; margin-left: 110px;">
+
+           <p style="margin-bottom: 0px; font-weight: bolder; margin-left: 110px;">OR NUMBER : </p>
+          <input type="text" name="orno" class="username" value="<?php echo $orno; ?>" placeholder="OR Number" style="width: 450px; margin-bottom: 10px; margin-left: 110px;">
+          
+          <p style="margin-bottom: 0px; font-weight: bolder; margin-left: 110px;">AMOUNT :  </p>
+          <input type="text" name="amount" class="number" value="<?php echo $amount; ?>" placeholder="Amount" style="width: 450px; margin-bottom: 10px; margin-left: 110px;">
+        </div>
+               
+          <div class="buttons" style="margin-left: -125px;">
+            <a href="zone_per.php"><input type="button" class="cancel" value="BACK" style="margin-left: 235px;" ></a>
+            <input type="reset" class="clear" value="CLEAR" style="margin-left: 90px;">
+            <input type="submit" class="add" value="RECORD">
+          </div>
+        </form>
+    
+</body>
+</html>
